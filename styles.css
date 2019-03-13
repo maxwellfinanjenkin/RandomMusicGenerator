@@ -1,0 +1,132 @@
+body {
+	background-color: black;
+	background-image: url("BG.png");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+.middlebuttons .button {
+	float: left;
+	border: 1px solid #420D09;
+	background-color: #7C0A02;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.middlebuttons .button:hover {
+  box-shadow: 0 8px 10px 0 rgba(200,150,150,0.24), 0 10px 20px 0 rgba(200,150,150,0.19);
+}
+
+.middlebuttons .button:not(:last-child) {
+  border-right: none;
+}
+
+.middlebuttons {
+	position: absolute;
+	top: 30%;
+	left: 48%;
+	transform: translate(-50%, -50%);
+}
+
+#me {
+	position: absolute;
+	bottom: -8;
+	right: 18;
+	color: #450505;
+}
+
+#player {
+	position: absolute;
+	top: 60%;
+	left: 49%;
+	transform: translate(-50%, -50%);
+}
+
+.closedhist {
+	position: absolute;
+	top: 0;
+	right: -999;
+	width: 300px;
+	height: 96%;
+	background: #7C0A02;
+	overflow-y: auto;
+	overflow-x: hidden;
+	animation-name: slideout;
+	animation-duration: .15s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+}@keyframes slideout {
+	0% {right: 0;}
+	100% {right: -300;}
+}
+
+.openhist {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 300px;
+	height: 96%;
+	background: #7C0A02;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-left: 3px double #250101;
+	border-bottom: 3px double #250101;
+	animation-name: slidein;
+	animation-duration: .15s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+}@keyframes slidein {
+	0% {right: -300;}
+	100% {right: 0;}
+}
+
+.histbutton {
+	color: white;
+	text-decoration: none;
+	background-color: #7C0A02;
+	width: 288px;
+	height: 40px;
+	float: top;
+	font-family: "Arial", Sans-serif;
+	border: none;
+}
+
+.histbutton:hover {
+	background-color: #6E0505;
+}
+
+.name {
+	float: left;
+}
+
+.time {
+	float: right;
+}
+
+.item {
+	clear: both;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #7C0A02; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #4E0000; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
