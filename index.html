@@ -1,5 +1,6 @@
 <html>
 <head>
+	<link rel='icon' href='dice speaker scaled.ico' type='image/x-icon'/ >
 	<title>Random Music Genres</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
@@ -14,17 +15,50 @@
 		<button class="button" onclick="clearhist()">
 		Clear History
 		</button>
+		<button class="button" onclick="showfavs()">
+		Show Favourites
+		</button>
+		<button class="button" onclick="wikiframe()">
+		Show Wikipedia
+		</button>
 	</div>
-	<div id = "history" class = "dedhist">
+	</div>
+	<button class="info" onclick="info()">
+		i
+	</button>
+	</div>
+	<div id = "histcontainer">
+		<div id = "starbuffer"></div>
+		<div id = "history" class = "dedhist"></div>
 	</div>
 	
-	<p>Your genre is:</p>
-	<p id="genre_label"></p>
+	<p id = "info" class = "closedinfo">
+	Welcome to the Random Music Genre Generator.<br>
+	Ever wanted<br>
+	-To escape the suggestion algorithm!<br>
+	-To learn about all kinds of weird and wacky music!<br>
+	-Somone else to pick the music for you?<br>
+	Click the new genre button and start listening.
+	</p>
+
+	
+	<div id = "favcontainer">
+		<div id = "favourites" class = "dedfav"></div>
+	</div>
+	
+	<iframe id = "wiki" class = "wikiclosed" src="https://en.wikipedia.org/wiki/Special:Random"></iframe>
+	
 	<p id="me">Maxwell N Finan-Jenkin</p>
 	
 	<script src="./genres.js"></script>
 	<script src="./randommusicgenre.js"></script>
-	
+	<script>
+		document.getElementById("starbuffer").addEventListener("click", function(){checkfav();});
+	</script>
+	<div class='counter'>
+	<!-- hitwebcounter Code START -->
+	<a href="https://www.hitwebcounter.com" target="_blank">
+	<img src="https://hitwebcounter.com/counter/counter.php?page=7723633&style=0029&nbdigits=5&type=page&initCount=0" title="Total Website Hits" Alt="Web Hits"   border="0" /></a> 
+	</div>
 </body>
 </html>
-

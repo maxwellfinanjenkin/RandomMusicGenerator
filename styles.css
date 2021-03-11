@@ -34,11 +34,41 @@ body {
 	transform: translate(-50%, -50%);
 }
 
+
+.info{
+	border: 1px solid #420D09;
+	background-color: #7C0A02;
+	color: black;
+	text-align: center;
+	font-size: 25px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	border-radius: 50%;
+	height: 31px;
+	width: 31px;
+	position:absolute; 
+	left:63%; 
+	top:14%;
+}
+
+.info:hover {
+  box-shadow: 0 8px 10px 0 rgba(200,150,150,0.24), 0 10px 20px 0 rgba(200,150,150,0.19);
+  color: white;
+}
+
 #me {
 	position: absolute;
 	bottom: -8;
 	right: 18;
 	color: #450505;
+}
+
+.counter{
+	position: absolute;
+	bottom: 0px;
+	left: 250px;
+	height: 43px;
+    width: 109px;
 }
 
 #player {
@@ -53,7 +83,6 @@ body {
 	top: 0;
 	right: -999;
 	width: 300px;
-	height: 96%;
 	background: #7C0A02;
 	overflow-y: auto;
 	overflow-x: hidden;
@@ -72,10 +101,10 @@ body {
 	top: 0;
 	right: 0;
 	width: 300px;
-	height: 96%;
+	display: block;
 	background: #7C0A02;
-	overflow-y: auto;
-	overflow-x: hidden;
+	overflow-y: visible;
+	overflow-x: visible;
 	border-left: 3px double #250101;
 	border-bottom: 3px double #250101;
 	animation-name: slidein;
@@ -88,13 +117,35 @@ body {
 	100% {right: 0;}
 }
 
+#histcontainer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 350px;
+	height: calc(100% - 35px);
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-bottom: 2px #350101;
+}
+
+#starbuffer {
+	position: fixed;
+	top: 0px;
+	right: 300px;
+	width: 50px;
+	height: 100%;
+	z-index: 1;
+}
+
 .histbutton {
+	overflow-x: visible;
+	overflow-y: visible;
 	color: white;
 	text-decoration: none;
 	background-color: #7C0A02;
-	width: 288px;
-	height: 40px;
-	float: top;
+	width: 100%;
+	height: 25px;
+	float: none;
 	font-family: "Arial", Sans-serif;
 	border: none;
 }
@@ -103,16 +154,36 @@ body {
 	background-color: #6E0505;
 }
 
+
 .name {
-	float: left;
+	position: absolute;
+	height: 25px;
+	line-height: 25px;
+	left: 3px;
+}
+
+.nameF {
+	position: absolute;
+	right: 12px;
+	height: 25px;
+	line-height: 25px;
 }
 
 .time {
-	float: right;
+	position: absolute;
+	right: 5px;
+	height: 25px;
+	line-height: 25px;
 }
 
 .item {
+	position: relative;
+	top: 0;
+	left: 8px;
+	width: 288px;
+	height: 25px;
 	clear: both;
+	vertical-align: middle;
 }
 
 ::-webkit-scrollbar {
@@ -129,4 +200,143 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+
+.wikiclosed {
+	position: absolute;
+	right: -999;
+}
+
+.wikiopen {
+	position: absolute;
+	left: 17.5%;
+	width: 66%;
+	height: 55%;
+	top: 40%;
+	z-index: 2;
+}
+
+.star-five {
+  margin: 6px 0;
+  position: relative;
+  display: block;
+  color: olive;
+  width: 0px;
+  height: 0px;
+  border-right: 12px solid transparent;
+  border-bottom: 9px solid olive;
+  border-left: 12px solid transparent;
+  transform: rotate(35deg);
+  right: 37px;
+  top: -25px;
+}
+.star-five:before {
+  border-bottom: 11px solid olive;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -5px;
+  left: -7px;
+  display: block;
+  content: '';
+  transform: rotate(-35deg);
+}
+.star-five:after {
+  position: absolute;
+  display: block;
+  color: olive;
+  top: 1px;
+  left: -13px;
+  width: 0px;
+  height: 0px;
+  border-right: 12px solid transparent;
+  border-bottom: 9px solid olive;
+  border-left: 12px solid transparent;
+  transform: rotate(-70deg);
+  content: '';
+}
+
+.active {
+  color: gold !important;
+  border-bottom: 9px solid gold !important;
+}
+.active:before {
+  border-bottom: 11px solid gold !important;
+}
+.active:after {
+  color: gold !important;
+  border-bottom: 9px solid gold !important;
+}
+
+.not-hist {
+	position: relative !important;
+	right: 168px !important;
+}
+
+.closedfav {
+	position: absolute;
+	top: 0;
+	left: -999;
+	width: 200px;
+	background: #7C0A02;
+	overflow-y: auto;
+	overflow-x: hidden;
+	animation-name: slideoutF;
+	animation-duration: .15s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+}@keyframes slideoutF {
+	0% {left: 0;}
+	100% {left: -200;}
+}
+
+.openfav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	display: block;
+	background: #7C0A02;
+	overflow-y: visible;
+	overflow-x: visible;
+	border-right: 3px double #250101;
+	border-bottom: 3px double #250101;
+	animation-name: slideinF;
+	animation-duration: .15s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+}@keyframes slideinF {
+	0% {left: -200;}
+	100% {left: 0;}
+}
+
+#favcontainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 205px;
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-bottom: 2px #350101;
+	direction: rtl;
+}
+
+.closedinfo{
+	visibility: hidden;
+}
+
+.openinfo{
+	visibility: visible;
+	position: absolute;
+	left:64%; 
+	top:14%;
+	border: 1px solid #420D09;
+	background-color: #7C0A02;
+	color: white;
+	padding: 6px;
 }
